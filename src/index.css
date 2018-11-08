@@ -1,0 +1,131 @@
+html {
+  background: #efefef;
+  height: 100%; display: flex;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  max-width: 60rem;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 4.5rem;
+  font-weight: 300;
+  padding: 2rem;
+  margin: auto;
+}
+
+.content {
+  background: #fff;
+  font-size: 20px;
+  margin: 0 auto 1rem auto;
+  padding: 1em;
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.content label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #bbb;
+  margin: 0 0 .5em 0;
+  display: block;
+}
+
+.content .section {
+  margin-bottom: 1.5rem;
+}
+
+.content a.tag-btn {
+  text-decoration: none;
+  font-size: .7rem;
+  margin: 2px 4px 2px 0;
+  display: inline-block;
+  padding: .3rem;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  color: #ccc;
+  background: #eee;
+  transition: .2s all;
+  text-decoration: none;
+  color: #222;
+}
+
+.content a.tag-btn:hover {
+  background: #ddd;
+  border-color: #ccc;
+}
+
+.packages__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.packages__list li a {
+  transition: .2s all;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  padding: 1rem;
+  margin: 0 auto;
+  border-bottom: solid 1px #ddd;
+}
+
+.packages__list li:last-child a{
+  border-bottom: none;
+}
+
+.packages__list li a:hover {
+  color: #777;
+  padding-left: 1.2rem;
+}
+
+.nav {
+  display: flex;
+  font-size: 16px;
+  margin: 1rem auto 0 auto;
+  justify-content: space-between;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nav a {
+  flex: 1;
+  padding: 1em 2em;
+  background: #eee;
+  border: 1px solid #ddd;
+  transition: .2s all;
+  text-decoration: none;
+  color: #222;
+  font-size: 20px;
+  text-align: center;
+}
+
+.nav a.home {
+  flex: 0;
+}
+
+.nav a:hover {
+  background: #ddd;
+  border-color: #ccc;
+}
