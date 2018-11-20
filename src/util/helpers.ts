@@ -44,14 +44,14 @@ export const getDependants = (packages: Pkg[], pkgName: string): Pkg[] => packag
  * Extract dep-names from string
  * @param str
  */
-export const getDepenciesFromString = (str: string): RegExpMatchArray | null => !!str ? str.match(depenciesMatcher) : null;
+export const getDepenciesFromString = (str: string | undefined): RegExpMatchArray | null => !!str ? str.match(depenciesMatcher) : null;
 
 
 /**
  * Create packages-collection from file-contents
  * @param text
  */
-export const createPackagesCollection = (text: string): Pkg[] => [...text.split("\n\n").map(generatePackage)].sort(sorter('package'));
+export const createPackagesCollection = (text: string): Pkg[] => text.split("\n\n").map(generatePackage).sort(sorter('package'));
 
 
 /**
@@ -60,7 +60,7 @@ export const createPackagesCollection = (text: string): Pkg[] => [...text.split(
  */
 export const generatePackage = (section: string): Pkg => {
   return section.split(splitMatcher).reduce((obj, line) => {
-    return { ...obj, ...line.split(splitMatcher).reduce(createKeyvaluePairWith(': '), {})}
+    return { ...obj, ...line.split(splitMatcher).reduce(createKeyvaluePairWithSplitter(': '), {})}
   }, {} as Pkg);
 }
 
@@ -69,7 +69,7 @@ export const generatePackage = (section: string): Pkg => {
  * Extract key-value-pairs from string & return merged object with values assigned
  * @param splitter
  */
-export const createKeyvaluePairWith = (splitter: string) => (obj: object, line: string): object => {
+export const createKeyvaluePairWithSplitter = (splitter: string) => (obj: object, line: string): object | Error => {
   const kvPair: string[] = line.split(splitter);
   const key = kvPair[0].toLowerCase().replace('-', '_');
   const value = kvPair[1] && kvPair[1].trim();
