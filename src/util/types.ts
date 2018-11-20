@@ -1,9 +1,9 @@
 import { RouteComponentProps } from '@reach/router';
 
 export interface Pkg {
-  [key:string]: any; // Add index signature
+  [key:string]: any,
   architecture: string,
-  depends: string,
+  depends?: string,
   description: string,
   homepage: string,
   installed_size: string,
