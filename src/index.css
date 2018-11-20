@@ -30,7 +30,7 @@ code {
   text-align: center;
   font-size: 4.5rem;
   font-weight: 300;
-  padding: 2rem;
+  padding: 2rem 0;
   margin: auto;
 }
 
@@ -128,4 +128,14 @@ code {
 .nav a:hover {
   background: #ddd;
   border-color: #ccc;
+}
+
+@media only screen and (max-device-width:480px) {
+  .nav {
+    flex-direction: column-reverse;
+  }
+
+  .nav a.home {
+    flex: 1;
+  }
 }
