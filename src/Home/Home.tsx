@@ -11,8 +11,8 @@ export default ({ packages }: ComponentProps) => {
 
       <div className="content">
         <ul className="packages__list">
-          {packages.map((item: Pkg) =>
-            <li key={item.package}><Link to={`/pkg/${item.package}`}>{item.package}</Link></li>)
+          {packages.map((item: Pkg, index: number) =>
+            <li key={index}><Link to={`/pkg/${item.package}`}>{item.package}</Link></li>)
           }
         </ul>
       </div>

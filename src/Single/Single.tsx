@@ -13,7 +13,7 @@ import {
 
 export default ({ pkgName, packages }: ComponentProps) => {
 
-  const currentPackage = getPackageByName(packages, pkgName) as Pkg;
+  const currentPackage = getPackageByName(packages, pkgName);
 
   if(!currentPackage) {
     return <Redirect to="/404" noThrow />
