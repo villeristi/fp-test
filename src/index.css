@@ -131,6 +131,11 @@ code {
 }
 
 @media only screen and (max-device-width:480px) {
+  .container h1 {
+    font-size: 3.5rem;
+    hyphens: auto;
+  }
+
   .nav {
     flex-direction: column-reverse;
   }
